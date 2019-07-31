@@ -15,6 +15,11 @@ const ROUTES : Routes = [
     {
         path: 'survey',
         component: SurveyComponent
+    },
+    {
+        path: '',
+        redirectTo: '/survey',
+        pathMatch: 'full'
     }
 ]
 
