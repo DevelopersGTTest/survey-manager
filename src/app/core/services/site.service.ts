@@ -17,4 +17,8 @@ export class SiteService {
     return this.http.post( this.API_URL, body )
   }
 
+  recoverOpinions(): Observable<any>{
+    return this.http.get( this.API_URL )
+  }
+
 }

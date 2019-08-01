@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SiteService } from '../../services/site.service';
 
 @Component({
   selector: 'app-results',
@@ -8,19 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  public radarChartLabels: any[] = ['Training', 'Attention Changes', 'Designing Template', 'Development', 'Unit/Int Testing', 'Integrated Solutions'];
+  public numberPersons : number = 0;
+
+  public radarChartLabels: any[] = ['Tradicionalista por la familia', 'Monopolios', 'Marcas', 'Opinion democratica'];
 
   public radarChartData: any[] = [
-    { data: [59, 90, 81, 56, 55, 40], label: 'izquierda' },
-    { data: [48, 40, 19, 96, 27, 100], label: 'centro' },
-    { data: [20, 10, 19, 31, 8, 29], label: 'derecha' }
+    { data: [59, 90, 81, 56 ], label: 'izquierda' },
+    { data: [48, 40, 19, 96 ], label: 'centro' },
+    { data: [20, 10, 19, 31 ], label: 'derecha' }
   ];
 
   public radarChartType: any = 'radar';
 
-  constructor() { }
+  constructor(private siteService : SiteService ) { }
 
   ngOnInit() {
+    this.siteService.recoverOpinions()
+      .subscribe( data =>{
+        console.log( data )
+        this.numberPersons = Object.keys( data ).length
+      })
   }
 
 }
