@@ -11,6 +11,13 @@ import { APP_ROUTING } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 
+//firemodule
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { firebaseConfig } from '../environments/environment.prod';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +29,11 @@ import { FormsModule } from '@angular/forms'
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    APP_ROUTING
+    APP_ROUTING,
+    AngularFireModule.initializeApp( firebaseConfig ),
+    AngularFireModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
