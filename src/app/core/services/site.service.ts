@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,11 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class SiteService {
 
-  constructor( private af: AngularFirestore ) {} 
+  private API_URL = "https://umg-generic.firebaseio.com/surveys.json" 
 
-  saveOpinion( data : any  ) {
-    console.log(data)
-    this.af.collection('opiniones').add( data )
+  constructor( private http: HttpClient ) {} 
+
+  saveOpinion( data : any  ) : Observable<any> {
+    let body = JSON.stringify(data )
+    return this.http.post( this.API_URL, body )
   }
 
 }

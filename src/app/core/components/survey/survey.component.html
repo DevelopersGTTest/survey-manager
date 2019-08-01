@@ -3,18 +3,18 @@
     <div id="container" class="container">
         <div class="col-sm-6 offset-sm-3 text-center">
           <br><br><br>
-      <form class="form-inlin justify-content-center" >
+      <form (ngSubmit)="saveSurvey()" class="form-inlin justify-content-center" >
         <div class="form-group">
           <label for="exampleInputEmail1"> <strong>1.</strong> ¿ Usted esta de acuerdo con la idea de la familia tradicional ? </label>
           <small id="emailHelp" class="form-text text-muted">( Padre/Madre/Hijos )</small>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="family" id="yesAgreed" value="option1" (change)="noTraditionalism($event)" >
+              <input class="form-check-input" type="radio" [(ngModel)]="survey.family"  name="family" id="yesAgreed" value="si" (change)="noTraditionalism($event)" >
               <label class="form-check-label" for="exampleRadios1">
                 si
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="family" id="notAgreed" value="option2" (change)="noTraditionalism($event)"  >
+              <input class="form-check-input" type="radio"  [(ngModel)]="survey.family" name="family" id="notAgreed" value="no" (change)="noTraditionalism($event)"  >
               <label class="form-check-label" for="exampleRadios2">
                 no
               </label>
@@ -24,20 +24,20 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="">Explica tu respuesta</span>
               </div>
-              <input type="text" name="explain" class="form-control">
+              <input type="text" name="explain_family" [(ngModel)]="survey.explain_family"   class="form-control">
             </div>
          
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1"> <strong>2.</strong> ¿ Usted esta a favor de los monopolios ? </label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="monopoly" id="exampleRadios1" value="option1">
+              <input class="form-check-input" type="radio" [(ngModel)]="survey.monopoly"  name="monopoly" id="exampleRadios1" value="si">
               <label class="form-check-label" for="exampleRadios1">
                 si
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="monopoly" id="exampleRadios2" value="option2">
+              <input class="form-check-input" type="radio" [(ngModel)]="survey.monopoly" name="monopoly" id="exampleRadios2" value="no">
               <label class="form-check-label" for="exampleRadios2">
                 no
               </label>
@@ -46,13 +46,13 @@
         <div class="form-group">
           <label for="exampleInputEmail1"> <strong>3.</strong> ¿ De estas dos marcas cual prefiere ? </label>
             <div class="form-check">
-            <input class="form-check-input" type="radio" name="marks" id="exampleRadios1" value="option1">
+            <input class="form-check-input" type="radio" [(ngModel)]="survey.marks" name="marks" id="exampleRadios1" value="Super-Cola">
             <label class="form-check-label" for="exampleRadios1">
               Super-Cola
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="marks" id="exampleRadios2" value="option2">
+            <input class="form-check-input" type="radio" [(ngModel)]="survey.marks" name="marks" id="exampleRadios2" value="Coca-Cola">
             <label class="form-check-label" for="exampleRadios2">
               Coca-Cola
             </label>
@@ -61,13 +61,13 @@
         <div class="form-group">
           <label for="exampleInputEmail1"> <strong>4.</strong> ¿ Esta de acuerdo con un sistema de gobierno basado en Democracia ? </label>
             <div class="form-check">
-            <input class="form-check-input" type="radio" name="democracy" id="notDemocracy" (change)="noDemocracyAply($event)" value="option1">
+            <input class="form-check-input" type="radio" [(ngModel)]="survey.democracy" name="democracy" id="notDemocracy" (change)="noDemocracyAply($event)" value="no">
             <label class="form-check-label" for="exampleRadios1">
               no
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="democracy" id="yesDemocracy" (change)="noDemocracyAply($event)" value="option2">
+            <input class="form-check-input" type="radio" [(ngModel)]="survey.democracy" name="democracy" id="yesDemocracy" (change)="noDemocracyAply($event)" value="si">
             <label class="form-check-label" for="exampleRadios2">
               si
             </label>
@@ -76,7 +76,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="">Explica tu respuesta</span>
           </div>
-            <input type="text" name="explain" class="form-control">
+            <input type="text" [(ngModel)]="survey.explain_democracy" name="explain_democracy" class="form-control">
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Enviar mi Opinión </button>
