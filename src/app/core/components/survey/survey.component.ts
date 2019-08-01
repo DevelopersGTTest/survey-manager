@@ -7,11 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SurveyComponent implements OnInit {
 
-  status: boolean = true;
+  private showInputOne : boolean = false
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  noTraditionalism(evt) {
+    console.log('el evento es', evt.target.name );
+    ( evt.target.checked === true && evt.target.id  == "notAgreed" ) 
+      ? this.showInputOne = true 
+      : this.showInputOne = false ;
+
   }
 
 }

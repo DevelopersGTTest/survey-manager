@@ -8,30 +8,36 @@
           <label for="exampleInputEmail1"> <strong>1.</strong> ¿ Usted esta de acuerdo con la idea de la familia tradicional ? </label>
           <small id="emailHelp" class="form-text text-muted">( Padre/Madre/Hijos )</small>
           <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+              <input class="form-check-input" type="radio" name="family" id="yesAgreed" value="option1" (change)="noTraditionalism($event)" >
               <label class="form-check-label" for="exampleRadios1">
                 si
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" [checked]="status" (change)="changeStatus(record.id,$event)"  >
+              <input class="form-check-input" type="radio" name="family" id="notAgreed" value="option2" (change)="noTraditionalism($event)"  >
               <label class="form-check-label" for="exampleRadios2">
                 no
               </label>
               <a href="" *ngIf="status" >llena esto si dice no</a>
+            </div>
+            <div  *ngIf="showInputOne" class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="">Explica tu respuesta</span>
+              </div>
+              <input type="text" name="explain" class="form-control">
             </div>
          
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1"> <strong>2.</strong> ¿ Usted esta a favor de los monopolios ? </label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+              <input class="form-check-input" type="radio" name="monopoly" id="exampleRadios1" value="option1">
               <label class="form-check-label" for="exampleRadios1">
                 si
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+              <input class="form-check-input" type="radio" name="monopoly" id="exampleRadios2" value="option2">
               <label class="form-check-label" for="exampleRadios2">
                 no
               </label>
