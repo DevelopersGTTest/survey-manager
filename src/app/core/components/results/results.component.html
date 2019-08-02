@@ -16,3 +16,49 @@
 
 
 </div>
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tradicionalista por la familia</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Marca Preferida</th>
+        <th scope="col">A favor de la democracia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of dataArray">
+        <th scope="row"> {{element.id  }} </th>
+        <td> {{element.family  }}</td>
+        <td> {{element.age     }} </td>
+        <td> {{element.mark      }} </td>
+        <td> {{element.democracy  }} </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Total</th>
+          <th scope="col">A favor | Contra</th>
+          <th scope="col">Promedio </th>
+          <th scope="col">Marca Preferida</th>
+          <th scope="col">A favor | Contra</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"> 8 </th>
+          <td> 6 | 2</td>
+          <td> 24.1 </td>
+          <td> Coca-Cola </td>
+          <td> 6 | 2 </td>
+        </tr>
+      </tbody>
+    </table>
+  
+</div>
