@@ -2,7 +2,7 @@ export class Survey {
     key?: string
     family : string
     explain_family: string
-    monopoly : string
+    age : string
     marks : string
     democracy : string
     explain_democracy: string

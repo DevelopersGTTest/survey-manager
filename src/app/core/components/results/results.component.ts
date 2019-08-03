@@ -11,7 +11,7 @@ export class ResultsComponent implements OnInit {
   public numberPersons : number = 0;
   public arrDegub : any[] = []
 
-  public radarChartLabels: any[] = ['Tradicionalista por la familia', 'Monopolios', 'Marcas', 'Opinion democratica'];
+  public radarChartLabels: any[] = ['Tradicionalista por la familia', 'Edades', 'Marcas', 'Opinion democratica'];
 
   private dataArray: any[] =[
     { id : 1 , family: "si", age: 20 , mark : "Coca-Cola", democracy: "no" },
@@ -26,9 +26,9 @@ export class ResultsComponent implements OnInit {
   ] 
 
   public radarChartData: any[] = [
-    { data: [59, 90, 81, 56 ], label: 'izquierda' },
-    { data: [48, 40, 19, 96 ], label: 'centro' },
-    { data: [20, 10, 19, 31 ], label: 'derecha' }
+    { data: [80, 21.2, 100, 40 ], label: 'izquierda' },
+    { data: [16, 21.2, 0, 20 ], label: 'centro' },
+    { data: [20, 21.2, 0, 60 ], label: 'derecha' }
   ];   
 
   public radarChartType: any = 'radar';
